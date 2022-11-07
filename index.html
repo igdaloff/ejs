@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS Splash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet" />
+    <link href="/dist/index.css" rel="stylesheet" />
+    <script src="index.js"></script>
+  </head>
+  <body class="h-full">
+    <div class="grid grid-cols-2 bg-cover h-full" style="background-image: url('./images/bg.png')">
+      <div class="bg-black/50 relative">
+        <div class="m-8 border-solid border border-white absolute top-0 bottom-0 left-0 right-0">
+          <img src="images/logo-flower.svg" alt="Pink flower logo" class="absolute top-0 bottom-0 left-0 right-0 m-auto mix-blend-hard-light" />
+          <span class="absolute top-8 left-8 w-10 h-10 block bg-green"></span>
+          <span class="absolute top-8 right-8 w-10 h-10 block bg-green"></span>
+          <span class="absolute bottom-8 right-8 w-10 h-10 block bg-green"></span>
+          <span class="absolute bottom-8 left-8 w-10 h-10 block bg-green"></span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="bg-green absolute top-8 bottom-8 left-8 right-8 flex items-center flex-col justify-center text-center">
+          <div>
+            <h2 class="mb-12 font-serif text-xl">New website coming soon</h2>
+            <img src="images/logotype.svg" alt="Company logo" class="" />
+            <button class="mt-12 text-sm border-solid border border-black py-2 px-4 font-sans">Enter site</button>
+          </div>
+
+          <span class="absolute top-8 left-8 w-10 h-10 block bg-black"></span>
+          <span class="absolute top-8 right-8 w-10 h-10 block bg-black"></span>
+          <span class="absolute bottom-8 right-8 w-10 h-10 block bg-black"></span>
+          <span class="absolute bottom-8 left-8 w-10 h-10 block bg-black"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
