@@ -4,16 +4,16 @@ const { colors } = require('five-server/lib/colors')
 module.exports = {
   content: ['./*.{html,js}'],
   theme: {
-    colors: {
-      green: '#659B81',
-      black: '#000000',
-      white: '#ffffff',
+    extend: {
+      colors: {
+        green: '#659B81',
+      },
+      fontFamily: {
+        sans: ['Work Sans', 'Helvetica Neue', 'sans-serif'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
+      },
+      screens: {},
     },
-    fontFamily: {
-      sans: ['Work Sans', 'Helvetica Neue', 'sans-serif'],
-      serif: ['Georgia', 'Times New Roman', 'serif'],
-    },
-    extend: {},
   },
   plugins: [],
 }
