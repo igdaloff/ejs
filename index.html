@@ -10,21 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet" />
     <link href="/dist/index.css" rel="stylesheet" />
     <script type="text/javascript" src="/index.js"></script>
-    <script>
-      function dismissSplash() {
-        const splashOverlay = document.getElementById('splash')
-        splashOverlay.classList.add('hide')
-      }
-    </script>
   </head>
   <body class="h-full">
-    <div class="fixed grid grid-rows-[_2fr,_1fr] md:grid-rows-1 md:grid-cols-[_1fr,_2fr] lg:grid-cols-[_1fr,_1fr] bg-cover h-full w-full opacity-100 transition-opacity" style="background-image: url('./images/bg.png')" id="splash">
+    <div class="fixed top-0 left-0 right-0 z-[10000] grid grid-rows-[_2fr,_1fr] md:grid-rows-1 md:grid-cols-[_1fr,_2fr] lg:grid-cols-[_1fr,_1fr] bg-cover h-full w-full opacity-100 transition-opacity" style="background-image: url('./images/splash/bg.png')" id="splash">
       <div class="relative md:order-2">
         <div class="bg-green absolute top-4 bottom-4 left-4 right-4 lg:top-8 lg:bottom-8 lg:left-8 lg:right-8 flex items-center flex-col justify-center text-center">
           <div class="w-full">
             <h2 class="mb-6 md:mb-12 font-serif text-xl">New website coming soon</h2>
-            <img src="images/logotype.svg" alt="Company logo" class="max-w-[66%] m-auto" />
-            <button onClick="dismissSplash()" class="mt-6 md:mt-12 text-sm border-solid border border-black py-2 px-4 font-sans hover:bg-black hover:text-white transition-all">Enter site</button>
+            <img src="images/splash/logotype.svg" alt="Company logo" class="max-w-[66%] m-auto" />
+            <button onClick="dismissSplash()" class="mt-6 md:mt-12 text-sm uppercase text-black border-solid border border-black py-2 px-4 font-sans hover:bg-black hover:border-black hover:text-white transition-all bg-transparent rounded-none">Enter site</button>
           </div>
 
           <span class="absolute top-4 left-4 lg:top-8 lg:left-8 w-5 h-5 lg:w-10 lg:h-10 block bg-black"></span>
@@ -36,7 +30,7 @@
 
       <div class="bg-black/50 relative p-4 mt-[-1rem] m-4 md:mt-4 md:mr-[-1rem] lg:m-0 lg:p-8">
         <div class="lg:m-8 border-solid lg:border border-white absolute top-0 bottom-0 left-0 right-0">
-          <img src="images/logo-flower.svg" alt="Pink flower logo" class="w-[120px] sm:w-[180px] lg:w-[245px] absolute top-0 bottom-0 left-0 right-0 m-auto mix-blend-hard-light" />
+          <img src="images/splash/logo-flower.svg" alt="Pink flower logo" class="w-[120px] sm:w-[180px] lg:w-[245px] absolute top-0 bottom-0 left-0 right-0 m-auto mix-blend-hard-light" />
           <span class="absolute top-4 left-4 lg:top-8 lg:left-8 w-5 h-5 lg:w-10 lg:h-10 block bg-green"></span>
           <span class="absolute top-4 right-4 lg:top-8 lg:right-8 w-5 h-5 lg:w-10 lg:h-10 block bg-green"></span>
           <span class="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 w-5 h-5 lg:w-10 lg:h-10 block bg-green"></span>
@@ -44,8 +38,17 @@
         </div>
       </div>
     </div>
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <script>
+      const splashOverlay = document.getElementById('splash')
+
+      if (window.localStorage.getItem('seenSplash')) {
+        splashOverlay.classList.add('hidden')
+      }
+
+      function dismissSplash() {
+        splashOverlay.classList.add('hide')
+        window.localStorage.setItem('seenSplash', true)
+      }
+    </script>
   </body>
 </html>
